@@ -1,0 +1,17 @@
+{
+  "cabinets": [
+    {
+      "id": "cab-002",
+      "name": "tall Unit",
+      "width": 600,
+      "height": 2420,
+      "depth": 560,
+      "thickness": 18,
+      "options": {
+        "backType": "screwed",
+        "topStyle": "betweenSides"
+      },
+      "panels": ["left", "right", "top", "bottom", "back"]
+    }
+  ]
+}

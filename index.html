@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Cabinet Xpress</title>
+	<link rel="icon" type="image/x-icon" href="img/logo.jpg">
+	<link rel="stylesheet" type="text/css" href="css/style.css?v=1.0">
+	<script type="importmap">
+	{
+	  "imports": {
+	    "three": "https://cdn.jsdelivr.net/npm/three@0.172.0/build/three.module.js",
+	    "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.172.0/examples/jsm/",
+	    "lil-gui": "https://cdn.jsdelivr.net/npm/lil-gui@0.19/+esm"
+	  }
+	}
+	</script>
+</head>
+<body>
+	<div class="head_name">
+		<h1>opal Cabinet Xpress</h1>
+	</div>
+	<div class="main_div">
+		<div class="top_nav_1"></div>
+		<div class="top_nav_2">
+			<button id="newProjectBtn">+ Project</button>
+			<button id="newCabinateBtn">+ Cabinate</button>
+			<button id="newPanelBtn">+ Panel</button>
+			<button id="newSketchBtn">+ Sketch</button>
+			<button id="showTemplatesBtn">Templates</button>
+		</div>
+		<div class="left_nav">
+			<h4>Panels or Cabinets</h4>
+		</div>
+		<div class="right_nav">
+
+			<section class="sec_default">
+				<p>Nothing selected</p>
+			</section>
+
+
+			<section class="cabinet_creation hidden">
+			  <h3 id="cabinetManagerHeader">Create Cabinet</h3>
+
+			  <label for="cabinet_name">Cabinet Name</label>
+			  <input type="text" id="cabinet_name" value="Cabinet 1">
+			  <button id="createCabinetBtn" class="cabinetFormBtn">Create Cabinet</button>
+			  <button id="updateCabinetBtn" class="cabinetFormBtn hidden">Update Cabinet</button>
+			</section>
+
+			<section class="templateSection hidden">
+		 		<h3>Cabinet Templates</h3>
+		  		<div class="templates-grid"></div>
+			</section>
+
+
+			<section class="panel_creation hidden">
+				<h3 id="panelManagerHeader">Create Panel</h3>
+  
+				<div class="form_group">
+			        <span class="panleFormSelectedCabinet hidden"></span>
+			        <select id="panel_cabinet_select" class="panelCabinetSelect">
+			            <!-- Options will be populated dynamically -->
+			        </select>
+			    </div>
+				<div class="form_group">
+					<label>Panel Name</label>
+					<input id="panel_name" placeholder="Panel 1">
+				</div>
+				<div class="panel_dimension">
+					<h4>Panel Dimensions</h4>
+					<div class="form_group">
+						<label>Lenght</label>
+						<input id="panel_lenght" type="number" placeholder="lenght">
+					</div>
+					<div class="form_group">
+						<label>width</label>
+						<input id="panel_width" type="number" placeholder="width">
+					</div>
+					<div class="form_group">
+						<label>thickness</label>
+						<input id="panel_thickness" type="number" placeholder="thickness">
+					</div>
+				</div>
+				<div class="panel_position">
+					<h4>Panel Positions</h4>
+					<div class="form_group">
+						<label>X</label>
+						<input id="panel_x" type="number" placeholder="x">
+					</div>
+					<div class="form_group">
+						<label>y</label>
+						<input id="panel_y" type="number" placeholder="y">
+					</div>
+					<div class="form_group">
+						<label>z</label>
+						<input id="panel_z" type="number" placeholder="z">
+					</div>
+				</div>
+				<div class="panel_rotation">
+					<h4>Panel Rotation</h4>
+					<div class="form_group">
+						<label>X</label>
+						<input id="panel_rot_x" type="number" placeholder="x">
+					</div>
+					<div class="form_group">
+						<label>y</label>
+						<input id="panel_rot_y" type="number" placeholder="y">
+					</div>
+					<div class="form_group">
+						<label>z</label>
+						<input id="panel_rot_z" type="number" placeholder="z">
+					</div>
+				</div>
+				<button id="addPanelBtn" class="panelBtn">Add Panel</button>
+				<button id="updatePanelBtn" class="panelBtn hidden">Update Panel</button>
+			</section>
+		</div>
+
+		<div class="bottom_nav">
+		  <div class="floorsNav">
+		    <button id="addNewFloor">+ Floor</button>
+		  </div>
+		  <div class="projectsNav">
+		    <button id="addNewProject">+ Project</button>
+		  </div>
+		</div>
+		
+		<canvas class="main_canvas"></canvas>
+		<div class="viewManager">
+			<button class="wireView active">Wire</button>
+			<button class="solidView">Solid</button>
+		</div>
+	</div>
+	<script type="module" src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+{
+  "cabinets": [
+    {
+      "id": "cab-003",
+      "name": "Kitchen cabinet",
+      "width": 600,
+      "height": 720,
+      "depth": 560,
+      "thickness": 18,
+      "options": {
+        "backType": "groove",
+        "topStyle": "flushWithSides"
+      },
+      "panels": ["left", "right", "top", "bottom", "back"]
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "cabinets": [
+    {
+      "id": "cab-001",
+      "name": "Base Cabinet",
+      "width": 600,
+      "height": 720,
+      "depth": 560,
+      "thickness": 18,
+      "options": {
+        "backType": "screwed",
+        "topStyle": "flushWithSides"
+      },
+      "panels": ["left", "right", "top", "bottom", "back"]
+    }
+  ]
+}

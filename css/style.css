@@ -1,0 +1,1009 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+:root {
+  --black: #000000;
+  --white: #ffffff;
+  --gray-50: #fafafa;
+  --gray-100: #f5f5f5;
+  --gray-200: #e5e5e5;
+  --gray-300: #d4d4d4;
+  --gray-400: #a3a3a3;
+  --gray-500: #737373;
+  --gray-600: #525252;
+  --gray-700: #404040;
+  --gray-800: #262626;
+  --gray-900: #171717;
+  --dark-bg: #121212;
+  --dark-surface: #1e1e1e;
+  --dark-card: #2d2d2d;
+  --dark-border: #404040;
+  --accent-primary: #3b82f6;
+  --accent-secondary: #6366f1;
+  --border-radius: 6px;
+  --transition: all 0.2s ease;
+}
+
+html, body {
+  margin: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: var(--dark-bg);
+  color: var(--white);
+  position: relative;
+  font-family: "PP Neue Montreal", "Inter", sans-serif;
+  overflow: hidden;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.main_div {
+  position: relative;
+  display: grid;
+  height: 100vh;
+  width: 100vw;
+  grid-template-columns: 240px 1fr 240px;
+  grid-template-rows: 48px 48px 1fr 75px;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  background-color: var(--dark-bg);
+}
+
+.top_nav_1 { grid-area: 1 / 1 / 2 / 4; background-color: var(--dark-surface); color: var(--white); }
+.top_nav_2 { grid-area: 2 / 1 / 3 / 4; background-color: var(--dark-surface); border-bottom: 1px solid var(--dark-border); }
+.left_nav { grid-area: 3 / 1 / 4 / 2; background-color: var(--dark-surface); border-right: 1px solid var(--dark-border); }
+.right_nav { grid-area: 3 / 3 / 4 / 4; background-color: var(--dark-surface); border-left: 1px solid var(--dark-border); }
+.bottom_nav { grid-area: 4 / 1 / 5 / 4; background-color: var(--dark-surface); color: var(--white); }
+.main_canvas { grid-area: 3 / 2 / 4 / 3; }
+
+.main_canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+  background-color: var(--dark-card);
+}
+
+.head_name {
+  position: absolute;
+  margin: 0;
+  top: 12px;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  z-index: 10;
+}
+
+.head_name h1 {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 500;
+  letter-spacing: -0.025rem;
+  color: var(--white);
+}
+
+.top_nav_1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1.5rem;
+}
+
+.nav1_left button {
+  border: none;
+  background: none;
+  color: var(--white);
+  font-size: 0.875rem;
+  font-weight: 400;
+  padding: 6px 10px;
+  border-radius: var(--border-radius);
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+.nav1_left button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.top_nav_2 {
+  display: flex;
+  padding: 0 1.5rem;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.top_nav_2 button {
+  border: 1px solid var(--dark-border);
+  background: var(--dark-card);
+  color: var(--white);
+  padding: 6px 16px;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.top_nav_2 button:hover {
+  background-color: var(--dark-border);
+  border-color: var(--gray-400);
+}
+
+.panel_creation {
+  padding: 1.25rem;
+  background-color: var(--dark-surface);
+}
+
+.panel_creation input {
+  max-width: 100%;
+  padding: 8px 12px;
+  border: 1px solid var(--dark-border);
+  border-radius: var(--border-radius);
+  font-size: 0.875rem;
+  transition: var(--transition);
+  background-color: var(--dark-card);
+  color: var(--white);
+}
+
+.panel_creation input:focus {
+  outline: none;
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+}
+
+.panel_creation .form_group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.panel_creation label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+  color: var(--gray-300);
+}
+
+.panel_creation h3 {
+  margin-top: 0;
+  margin-bottom: 1.25rem;
+  font-weight: 600;
+  color: var(--white);
+}
+
+.panel_creation h4 {
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+  color: var(--gray-200);
+  font-size: 1rem;
+}
+
+.viewManager {
+  position: absolute;
+  top: 100px;
+  right: 260px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  background-color: var(--dark-card);
+  padding: 0.5rem;
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  border: 1px solid var(--dark-border);
+}
+
+.viewManager button {
+  border: 1px solid var(--dark-border);
+  background: var(--dark-card);
+  color: var(--gray-300);
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: var(--border-radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+}
+
+.viewManager button:hover {
+  background-color: var(--dark-border);
+  color: var(--white);
+  cursor: pointer;
+}
+
+.viewManager button.active {
+  background-color: var(--accent-primary);
+  color: var(--white);
+  border-color: var(--accent-primary);
+}
+
+.left_nav {
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  overflow-y: auto;
+}
+
+.left_nav h4 {
+  margin: 0 0 0.75rem 0;
+  font-weight: 600;
+  color: var(--gray-400);
+  font-size: 1rem;
+}
+
+.objectBtns {
+  padding: 8px 12px;
+  border: 1px solid var(--dark-border);
+  background-color: var(--dark-card);
+  border-radius: var(--border-radius);
+  font-size: 0.875rem;
+  text-align: left;
+  transition: var(--transition);
+  cursor: pointer;
+  margin-bottom: 0.25rem;
+  color: var(--white);
+}
+
+.objectBtns:hover {
+  background-color: var(--dark-border);
+  border-color: var(--gray-400);
+}
+
+.cabinet-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.cabinet-panels {
+  padding-left: 1rem;
+  margin-top: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.right_nav {
+  padding: 0;
+  overflow-y: auto;
+}
+
+.right_nav section {
+  padding: 1.25rem;
+  background-color: var(--dark-surface);
+}
+
+.sec_default p {
+  color: var(--gray-500);
+  font-style: italic;
+  margin: 0;
+}
+
+.cabinet_creation {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background-color: var(--dark-surface);
+}
+
+.cabinet_creation label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--gray-300);
+}
+
+.cabinet_creation input {
+  padding: 8px 12px;
+  border: 1px solid var(--dark-border);
+  border-radius: var(--border-radius);
+  font-size: 0.875rem;
+  transition: var(--transition);
+  background-color: var(--dark-card);
+  color: var(--white);
+}
+
+.cabinet_creation input:focus {
+  outline: none;
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+}
+
+.cabinet_creation button, .panelBtn {
+  padding: 8px 16px;
+  background-color: var(--accent-primary);
+  color: var(--white);
+  border: none;
+  border-radius: var(--border-radius);
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.cabinet_creation button:hover, .panelBtn:hover {
+  background-color: var(--accent-secondary);
+}
+
+#active_cabinet_label {
+  font-weight: 500;
+  color: var(--white);
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--dark-surface);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--dark-border);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gray-600);
+}
+
+/* Cabinet specific styles */
+/* style.css */
+/* Add these styles to the existing CSS */
+
+.cabinet-header {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    width: 100%;
+}
+
+.cabinetBtn {
+    flex: 1;
+    text-align: left;
+    padding: 8px 12px;
+    border: 1px solid var(--dark-border);
+    background-color: var(--dark-card);
+    border-radius: var(--border-radius);
+    font-size: 0.875rem;
+    transition: var(--transition);
+    cursor: pointer;
+    margin-bottom: 0.25rem;
+    color: var(--white);
+}
+
+.cabinetBtn:hover {
+    background-color: var(--dark-border);
+    border-color: var(--gray-400);
+}
+
+.cabinet-dropdown {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.dropdown-toggle {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--dark-border);
+    background-color: var(--dark-card);
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: var(--transition);
+    color: var(--gray-400);
+    font-size: 10px;
+}
+
+.dropdown-toggle:hover {
+    background-color: var(--dark-border);
+    color: var(--white);
+}
+
+.menu-toggle {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--dark-border);
+    background-color: var(--dark-card);
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: var(--transition);
+    color: var(--gray-400);
+    font-size: 14px;
+}
+
+.menu-toggle:hover {
+    background-color: var(--dark-border);
+    color: var(--white);
+}
+
+/* Panel creation form select styling */
+.panel_creation select {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid var(--dark-border);
+    border-radius: var(--border-radius);
+    font-size: 0.875rem;
+    transition: var(--transition);
+    background-color: var(--dark-card);
+    color: var(--white);
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 8px center;
+    background-size: 16px;
+}
+
+.panel_creation select:focus {
+    outline: none;
+    border-color: var(--accent-primary);
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+}
+
+/* Template section styling */
+.templateSection {
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--dark-border);
+}
+
+.templates-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: var(--dark-card);
+  border: 1px solid var(--dark-border);
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  z-index: 100;
+  min-width: 120px;
+  display: none;
+}
+
+.dropdown-menu.show {
+  display: block;
+}
+
+.dropdown-item {
+  padding: 8px 12px;
+  font-size: 0.875rem;
+  color: var(--white);
+  cursor: pointer;
+  transition: var(--transition);
+  border: none;
+  background: none;
+  width: 100%;
+  text-align: left;
+}
+
+.dropdown-item:hover {
+  background-color: var(--dark-border);
+}
+
+.cabinet-panels {
+  padding-left: 1rem;
+  margin-top: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.add-panel-container {
+  margin-top: 0.5rem;
+}
+
+.addPanelBtn {
+  padding: 6px 10px;
+  border: 1px solid var(--dark-border);
+  background-color: var(--dark-card);
+  border-radius: var(--border-radius);
+  font-size: 0.75rem;
+  text-align: left;
+  transition: var(--transition);
+  cursor: pointer;
+  color: var(--gray-400);
+  width: 100%;
+}
+
+.addPanelBtn:hover {
+  background-color: var(--dark-border);
+  color: var(--white);
+}
+
+/* Selection states */
+.objectBtns:focus,
+.cabinetBtn:focus,
+.dropdown-toggle:focus,
+.viewManager button:focus {
+  outline: 2px solid var(--accent-primary);
+  outline-offset: 2px;
+}
+
+/* Animation for better UX */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.dropdown-menu {
+  animation: fadeIn 0.2s ease-out;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .main_div {
+    grid-template-columns: 200px 1fr 200px;
+  }
+  
+  .viewManager {
+    right: 220px;
+  }
+}
+
+@media (max-width: 768px) {
+  .main_div {
+    grid-template-columns: 160px 1fr 160px;
+  }
+  
+  .viewManager {
+    right: 180px;
+    top: 80px;
+  }
+}
+
+.cabinetTemplate {
+	background-color: var(--dark-card);
+  	border: 1px solid var(--dark-border);
+  	border-radius: var(--border-radius);
+  	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  	height: 197px;
+  	display: flex;
+  	flex-direction: column;
+  	align-items: center;
+  	gap: 8px;
+}
+
+.cabinetTemplate img {
+	width: 90%;
+	height: 70%;
+	border: 1px solid var(--dark-border);
+  	border-radius: var(--border-radius);
+  	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  	margin-top: 5%;
+}
+
+
+/* Add to style.css */
+.context-menu {
+    position: fixed;
+    background-color: var(--dark-card);
+    border: 1px solid var(--dark-border);
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    display: none;
+    min-width: 160px;
+    padding: 0.25rem;
+}
+
+.context-menu.visible {
+    display: block;
+    animation: fadeIn 0.15s ease-out;
+}
+
+.context-menu-item {
+    display: block;
+    width: 100%;
+    padding: 8px 12px;
+    border: none;
+    background: none;
+    text-align: left;
+    color: var(--white);
+    font-size: 0.875rem;
+    cursor: pointer;
+    border-radius: var(--border-radius);
+    transition: var(--transition);
+}
+
+.context-menu-item:hover {
+    background-color: var(--dark-border);
+}
+
+.context-menu-item.danger {
+    color: #ef4444;
+}
+
+.context-menu-item.danger:hover {
+    background-color: rgba(239, 68, 68, 0.2);
+    color: #fff;
+}
+
+/* Animation for context menu */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Add to style.css */
+.context-menu-item.danger {
+    color: #ef4444;
+}
+
+.context-menu-item.danger:hover {
+    background-color: rgba(239, 68, 68, 0.2);
+    color: #fff;
+}
+
+
+/* New Project Form Overlay */
+.project-form-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    backdrop-filter: blur(4px);
+}
+
+/* Form Container */
+.project-form {
+    background-color: var(--dark-card);
+    border: 1px solid var(--dark-border);
+    border-radius: var(--border-radius);
+    padding: 2rem;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    animation: slideIn 0.3s ease-out;
+}
+
+/* Title */
+.project-form h2 {
+    color: var(--white);
+    margin: 0 0 1.5rem 0;
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+/* Input Fields */
+.project-form input[type="text"] {
+    width: 92%;
+    padding: 0.75rem 1rem;
+    background-color: var(--dark-surface);
+    border: 1px solid var(--dark-border);
+    border-radius: var(--border-radius);
+    color: var(--white);
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    transition: var(--transition);
+}
+
+.project-form input[type="text"]:focus {
+    outline: none;
+    border-color: var(--accent-primary);
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+}
+
+.project-form input[type="text"]::placeholder {
+    color: var(--gray-500);
+}
+
+/* Floor List */
+.floor-list {
+    margin-bottom: 1.5rem;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+/* Floor Item */
+.floor-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+    padding: 0.5rem;
+    background-color: var(--dark-surface);
+    border-radius: var(--border-radius);
+    border: 1px solid transparent;
+    transition: var(--transition);
+}
+
+.floor-item:hover {
+    border-color: var(--dark-border);
+}
+
+.floor-item input {
+    flex: 1;
+    margin-bottom: 0;
+    background-color: transparent;
+    border: none;
+}
+
+.floor-item input:focus {
+    border: none;
+    box-shadow: none;
+}
+
+/* Add Floor Button */
+.project-form button {
+    padding: 0.75rem 1rem;
+    background-color: var(--accent-primary);
+    color: var(--white);
+    border: none;
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.project-form button:hover {
+    background-color: #2563eb;
+    transform: translateY(-1px);
+}
+
+.project-form button:active {
+    transform: translateY(0);
+}
+
+/* Scrollbar Styling for Floor List */
+.floor-list::-webkit-scrollbar {
+    width: 6px;
+}
+
+.floor-list::-webkit-scrollbar-track {
+    background: var(--dark-surface);
+    border-radius: 3px;
+}
+
+.floor-list::-webkit-scrollbar-thumb {
+    background: var(--gray-600);
+    border-radius: 3px;
+}
+
+.floor-list::-webkit-scrollbar-thumb:hover {
+    background: var(--gray-500);
+}
+
+/* Animation */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Floor Item with Delete Button */
+.floor-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+    padding: 0.5rem;
+    background-color: var(--dark-surface);
+    border-radius: var(--border-radius);
+    border: 1px solid transparent;
+    transition: var(--transition);
+}
+
+.floor-item:hover {
+    border-color: var(--dark-border);
+}
+
+.floor-input {
+    flex: 1;
+    margin-bottom: 0;
+    background-color: transparent;
+    border: none;
+    color: var(--white);
+    padding: 0.5rem;
+}
+
+.floor-input:focus {
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* Delete Floor Button */
+.delete-floor-btn {
+    background: none;
+    border: none;
+    color: var(--gray-400);
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 3px;
+    transition: var(--transition);
+}
+
+.delete-floor-btn:hover {
+    color: #ef4444;
+    background-color: rgba(239, 68, 68, 0.1);
+}
+
+/* Add Floor Button */
+.add-floor-btn {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    background-color: var(--gray-700);
+    color: var(--white);
+    border: 1px solid var(--dark-border);
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition);
+    margin-bottom: 1.5rem;
+}
+
+.add-floor-btn:hover {
+    background-color: var(--gray-600);
+    border-color: var(--accent-primary);
+}
+
+/* Form Buttons Container */
+.form-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+/* Cancel Button */
+.cancel-btn {
+    flex: 1;
+    padding: 0.75rem 1rem;
+    background-color: var(--gray-700);
+    color: var(--white);
+    border: 1px solid var(--dark-border);
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.cancel-btn:hover {
+    background-color: var(--gray-600);
+    border-color: var(--gray-400);
+}
+
+/* Create Project Button */
+.create-project-btn {
+    flex: 2;
+    padding: 0.75rem 1rem;
+    background-color: var(--accent-primary);
+    color: var(--white);
+    border: none;
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.create-project-btn:hover {
+    background-color: #2563eb;
+    transform: translateY(-1px);
+}
+
+.create-project-btn:active {
+    transform: translateY(0);
+}
+
+/* Disable delete button when only one floor exists */
+.floor-item:only-child .delete-floor-btn {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.floor-item:only-child .delete-floor-btn:hover {
+    color: var(--gray-400);
+    background-color: transparent;
+}
+/* Enhance focus state for better visibility */
+#project-name-input:focus {
+    border-color: var(--accent-primary);
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
+    transform: translateY(-1px);
+}
+
+/* Animation for focus */
+#project-name-input {
+    transition: all 0.3s ease;
+}
+
+
+
+/* Bottom Navigation Styles */
+.bottom_nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-top: 1px solid var(--dark-border);
+  padding-left: 10px;
+}
+
+.floorsNav, .projectsNav {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  gap: 0.5rem;
+}
+
+.projectsNav {
+    border-top: 1px solid var(--dark-border);
+}
+
+/* Style for both buttons */
+#addNewFloor, #addNewProject, .bottomNavBtn {
+  padding: 0;
+  margin: 0;
+}
+
+#addNewFloor, #addNewProject, .bottomNavBtn {
+  border: 1px solid var(--dark-border);
+  background: var(--dark-card);
+  color: var(--gray-300);
+  padding: 6px 12px;
+  border-radius: var(--border-radius);
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition);
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 80px;
+}
+
+
+#addNewFloor:hover, #addNewProject:hover, .bottomNavBtn:hover {
+  background-color: var(--dark-border);
+  color: var(--white);
+  border-color: var(--gray-400);
+}
+
+.bottomNavBtn.active {
+  background-color: var(--accent-primary);
+  color: var(--white);
+  border-color: var(--accent-primary);
+}
